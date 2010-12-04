@@ -33,6 +33,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "bakkuappu.gemspec",
     "lib/bakkuappu.rb",
     "lib/bakkuappu/configuration.rb",
     "lib/bakkuappu/multipart_s3_backup.rb",
