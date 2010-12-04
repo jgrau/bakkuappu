@@ -45,8 +45,8 @@ PLATFORMS
 DEPENDENCIES
   activesupport (>= 3.0.0)
   bundler (~> 1.0.0)
-  fog
-  heroku
+  fog (> 0.3.25)
+  heroku (>= 1.14.6)
   jeweler (~> 1.5.1)
   rcov
   shoulda
