@@ -49,6 +49,22 @@ http://docs.amazonwebservices.com/AmazonS3/latest/API/mpUploadUploadPart.html
   end
 
 
+== Running a backup
+
+  rake heroku:cron
+
+  This task can be linked using the heroku cron addon
+
+
+== Testing the gem
+
+  Right now we get a heroku backup url from your app, pull it, md5 hash it
+  upload it, and compare the hash of the file we pushed to S3. 
+
+  To run tests you need to
+  * copy tests/test_configuration.example.rb to tests/test_configuration.rb and add your information.
+  * rake test
+
 == Contributing to Bakkuappu
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
