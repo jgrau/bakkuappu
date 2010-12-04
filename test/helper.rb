@@ -16,3 +16,10 @@ require 'bakkuappu'
 
 class Test::Unit::TestCase
 end
+
+#Custom lib requirements
+require "openssl"
+require 'net/http'
+require 'net/https'
+require 'uri'
+require 'pp' #Debugging

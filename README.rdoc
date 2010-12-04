@@ -1,8 +1,55 @@
-= bakkuappu
+Bakkuappu
 
-Description goes here.
+    __          __   __
+   / /_  ____ _/ /__/ /____  ______ _____  ____  __  __
+  / __ \/ __ `/ //_/ //_/ / / / __ `/ __ \/ __ \/ / / /
+ / /_/ / /_/ / ,< / ,< / /_/ / /_/ / /_/ / /_/ / /_/ /
+/_.___/\__,_/_/|_/_/|_|\__,_/\__,_/ .___/ .___/\__,_/
+                                 /_/   /_/
 
-== Contributing to bakkuappu
+~heroku-streaming-s3-backups~
+
+== Features:
+ * Reliable backups to AWS S3 using heroku's "pgbackup" FREE addon feature
+ * Reliably and safely handles database backups using multipart uploads
+ * Reads and write to amazon occur with NO file writes to local file system
+ * Can be added as a cron job to heroku to be done seamlessly at night
+
+Relies on fog as the S3 client
+
+== Description:
+
+All of the heroku automated backup solutions for s3 either are outdated or
+sadly very unreliable. This gem makes NO use of the tmp folder on heroku as
+doing so opens up the possibility of corrupted backups should heroku decide
+to clear it when you are backing up. It also scales to larger databases as
+solutions using heroku's tmp folders don't have any clue how large that directory
+is or when backups will fail because of size limitations.
+
+Instead of downloading the whole backup in one big download and storing to tmp
+we instead use Net:Http and its lower level interfaces to get data and send data
+in ordered chunks using Amazon's multipart upload rest api.
+http://docs.amazonwebservices.com/AmazonS3/latest/API/mpUploadUploadPart.html
+
+
+== Setup
+
+   sudo gem install bakkuappu
+
+== Configuration
+
+  Add a initializer with the following information
+
+  Bakkuappu::Configuration.configure do |config|
+    config.s3_access_key_id =       #your_s3_access_key_id
+    config.s3_secret_access_key =   #your_s3_secret_access_key
+    config.s3_bucket =              #your_s3_bucket
+    config.heroku_app =             #your_heroku_app
+    config.s3_access_policy =       'private'
+  end
+
+
+== Contributing to Bakkuappu
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
