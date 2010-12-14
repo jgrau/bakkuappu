@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{bakkuappu}
-  s.version = "0.1.1"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Timothy Cardenas"]
-  s.date = %q{2010-12-04}
+  s.date = %q{2010-12-14}
   s.description = %q{All of the heroku automated backup solutions for s3 either are outdated or
                       sadly very unreliable. This gem makes NO use of the tmp folder on heroku as
                       doing so opens up the possibility of corrupted backups should heroku decide
