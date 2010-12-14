@@ -1,4 +1,4 @@
-== Bakkuappu
+== Bakkuappu ==
 
 == Features:
  * Reliable backups to AWS S3 using heroku's "pgbackup" FREE addon feature
