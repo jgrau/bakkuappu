@@ -1,6 +1,12 @@
 Bakkuappu
 
-~heroku-streaming-s3-backups~
+    __          __   __
+   / /_  ____ _/ /__/ /____  ______ _____  ____  __  __
+  / __ \/ __ `/ //_/ //_/ / / / __ `/ __ \/ __ \/ / / /
+ / /_/ / /_/ / ,< / ,< / /_/ / /_/ / /_/ / /_/ / /_/ /
+/_.___/\__,_/_/|_/_/|_|\__,_/\__,_/ .___/ .___/\__,_/
+                                 /_/   /_/
+
 
 == Features:
  * Reliable backups to AWS S3 using heroku's "pgbackup" FREE addon feature
@@ -39,6 +45,8 @@ http://docs.amazonwebservices.com/AmazonS3/latest/API/mpUploadUploadPart.html
     config.s3_bucket =              #your_s3_bucket
     config.heroku_app =             #your_heroku_app
     config.s3_access_policy =       'private'
+    config.heroku_user =            #heroku account user_name
+    config.heroku_pass =            #heroku account password
   end
 
 
