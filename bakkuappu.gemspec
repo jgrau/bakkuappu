@@ -63,7 +63,7 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<activesupport>, [">= 3.0.0"])
-      s.add_runtime_dependency(%q<fog>, ["> 0.3.25"])
+      s.add_runtime_dependency(%q<fog>, [">= 0.3.25"])
       s.add_runtime_dependency(%q<heroku>, [">= 1.14.6"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
